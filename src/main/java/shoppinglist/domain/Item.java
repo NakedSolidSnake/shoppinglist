@@ -9,8 +9,19 @@ public class Item {
 	private Double total;
 	private Boolean status;
 	
+	public Item() {
+	    
+	}
 	
-	public Long getId() {
+	public Item(String description, Double price, Double amount, Boolean status) {
+        this.description = description;
+        this.price = price;
+        this.amount = amount;
+        this.total = amount * price;
+        this.status = status;
+    }
+	
+    public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {

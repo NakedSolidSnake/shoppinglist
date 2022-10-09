@@ -8,7 +8,7 @@ public class ShoppingList {
 	private Long id;
 	private String name;
 	private Boolean status;
-	private Double total;
+	private Double total = 0.0;
 	private List<Item> items = new ArrayList<Item>();
 
 	public Long getId() {
@@ -35,10 +35,15 @@ public class ShoppingList {
 		this.status = status;
 	}
 
-	public void add(Item item) {
-		items.add(item);
-		calculateTotal();
-	}
+    public void add(Item item) {
+        if (item == null) {
+           throw new NullPointerException ();
+        }
+        
+        items.add(item);
+        calculateTotal();
+        
+    }
 
 	public Double getTotal() {
 		return this.total;
